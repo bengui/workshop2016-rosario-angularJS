@@ -11,9 +11,10 @@ export function routes($routeProvider, $locationProvider) {
         .otherwise('/')
         .when('/', {
             templateUrl: '/components/app/views/index.html',
-            // resolve: {
-            //   data: //Implement API call to get bands
-            // },
+            resolve: {
+            data: (ApiService) => 
+                ApiService.getBands(),//   data: //Implement API call to get bands
+            },
         })
         .when('/band/:bandId/', {
             templateUrl: '/components/app/views/band-detail.html',
