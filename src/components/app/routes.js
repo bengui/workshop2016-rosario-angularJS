@@ -14,14 +14,14 @@ export function routes($routeProvider, $locationProvider) {
             resolve: {
             data: (ApiService) => 
                 ApiService.getBands(),//   data: //Implement API call to get bands
+                data: (ApiService) => ApiService.getBands()
             },
         })
         .when('/band/:bandId/', {
             templateUrl: '/components/app/views/band-detail.html',
             resolve: {
-              artists: ($route, ApiService) =>
-                  ApiService.getArtists($route.current.params.bandId),
-              // albums: //Implement API call to get albums
+                artists: ($route, ApiService) => ApiService.getArtists($route.current.params.bandId),
+                albums: ($route, ApiService) => ApiService.getAlbums($route.current.params.bandId)
             },
         })
         .when('/band/:bandId/album/:albumId/', {

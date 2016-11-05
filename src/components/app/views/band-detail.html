@@ -3,15 +3,26 @@
     <h2>Artists</h2>
     <!-- Show artists details here -->
     <!-- <pre>{{$resolve.artists | json}}</pre> -->
+    <div class="row">
+        <div class="col-md-4" ng-repeat="artist in $resolve.artists">
+            <img ng-src="{{artist.url}}" class="img-responsive" />
+            <p>{{artist.firstName}} {{artist.lastName}}</p>
+        </div>
+    </div>
     <hr />
 
     <h2>Albums</h2>
     <!-- Show Albums details here -->
-    <!-- <pre>{{$resolve.albums | json}}</pre> -->
+     <!-- <pre>{{$resolve.albums | json}}</pre> -->
+    <div class="row">
+        <div class="col-md-4" ng-repeat="album in $resolve.albums">
+            <img ng-src="{{album.url}}" class="img-responsive" />
+            <p>{{artist.name}}</p>
+        </div>
+    </div>
     <hr />
 
-    <div class="tracks"
-        ng-if="$resolve.tracks">
+    <div class="tracks" ng-if="$resolve.tracks">
         <h2>Tracks in {{$resolve.selectedAlbum.name}}</h2>
         <!-- Show Tracks from selected album -->
 

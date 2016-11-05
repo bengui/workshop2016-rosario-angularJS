@@ -10,11 +10,20 @@ export class ApiService {
             .then(response => response.data);
     }
 
-    //getBand(bandId)
+    getBand(bandId) {
+        return this.http.get(`${this.url}/bands/${bandId}`)
+            .then(response => response.data);
+    }
 
-    // getArtists(bandId)
+    getArtists(bandId) {
+        return this.http.get(`${this.url}/bands/${bandId}/artists`)
+            .then(response => response.data);
+    }
 
-    // getAlbums(bandId)
+    getAlbums(bandId) {
+        return this.http.get(`${this.url}/bands/${bandId}/albums`)
+            .then(response => response.data);
+    }
 
     // getAlbum(albumId)
 
